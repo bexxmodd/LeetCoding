@@ -12,19 +12,18 @@ Output: true
 """
 
 class Solution:
-
-    def containsNearbyAlmostDuplicate(self, nums, k: int, t: int) -> bool:
-        if len(nums) <= 1:
+    def containsNearbyAlmostDuplicate(self, nums: list, k: int, t: int) -> bool:
+        if t == 0 and len(nums) == len(set(nums)):
             return False
-        if k < 0 or t < 0:
-            return False
-        ns = set(nums)
-        ns = list(ns)
-        if ns[0] - ns[-1] <= t and len(nums) <= k:
-            return True
+        for i in range(len(nums)):
+            for j in range(i + 1, i + k + 1):
+                if j >= len(nums):
+                    break
+                if abs(nums[i] - nums[j]) <= t:
+                    return True
         return False
 
-
+# Test solution
 s = Solution()
 print(s.containsNearbyAlmostDuplicate(nums = [1,2,3,1], k = 3, t = 0))
 print(s.containsNearbyAlmostDuplicate(nums = [1,0,1,1], k = 1, t = 2))
