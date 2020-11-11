@@ -5,6 +5,6 @@ class Solution:
         result = []
         for row in A:
             row.reverse()
-            image = [1 if i == 0 in row else 0 for i in row]
+            image = [1 if i == 0 in row else i ==1 for i in row]
             result.append(image)
         return result
