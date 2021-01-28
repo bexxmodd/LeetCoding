@@ -90,28 +90,25 @@ class MyLinkedList:
         """
         Delete the index-th node in the linked list, if the index is valid.
         """
-        if index == 0:
+        if index < 0 or index > self.size:
+            return
+        elif index == 0:
             self.val == self.val.next
-        tmp = self.val.next
-        next_val = tmp.next
-        pointer = 1
-        while tmp:
-            if pointer == index:
-                tmp == next_val
-            tmp = tmp.next
-            pointer += 1
+        else:
+            current = self.val
+            for i in range(1, index):
+                current = current.next
+            current.next = current.next.next
 
 
 # Your MyLinkedList object will be instantiated and called as such:
 myLinkedList = MyLinkedList()
 myLinkedList.addAtHead(1)
 myLinkedList.addAtHead(4)
-print(myLinkedList)
 myLinkedList.addAtTail(3)
-print(myLinkedList)
 myLinkedList.addAtIndex(2, 2)
 print(myLinkedList)
-
-# print(myLinkedList.get(1))    
-# myLinkedList.deleteAtIndex(1)
-# print(myLinkedList.get(1))      
+print(myLinkedList.get(1))    
+myLinkedList.deleteAtIndex(1)
+print(myLinkedList)
+print(myLinkedList.get(1))    
