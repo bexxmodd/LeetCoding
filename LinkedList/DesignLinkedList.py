@@ -75,7 +75,7 @@ class MyLinkedList:
             return
         elif index == 0:
             self.addAtHead(val)
-            size += 1
+            self.size += 1
         else:
             new_node = Node(val)
             current = self.val
@@ -90,25 +90,26 @@ class MyLinkedList:
         """
         Delete the index-th node in the linked list, if the index is valid.
         """
-        if index < 0 or index > self.size:
+        if index < 0 or index >= self.size or self.val is None:
             return
         elif index == 0:
-            self.val == self.val.next
+            self.val = self.val.next
+            self.size -= 1
         else:
             current = self.val
-            for i in range(1, index):
+            for i in range(index - 1):
                 current = current.next
             current.next = current.next.next
+            self.size -= 1
 
 
 # Your MyLinkedList object will be instantiated and called as such:
 myLinkedList = MyLinkedList()
 myLinkedList.addAtHead(1)
-myLinkedList.addAtHead(4)
 myLinkedList.addAtTail(3)
-myLinkedList.addAtIndex(2, 2)
+myLinkedList.addAtIndex(1, 2)
+print(myLinkedList.get(1))
+print(myLinkedList)  
+myLinkedList.deleteAtIndex(0)
 print(myLinkedList)
-print(myLinkedList.get(1))    
-myLinkedList.deleteAtIndex(1)
-print(myLinkedList)
-print(myLinkedList.get(1))    
+print(myLinkedList.get(0))    
