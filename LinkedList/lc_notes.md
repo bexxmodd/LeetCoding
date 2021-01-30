@@ -1,4 +1,4 @@
-## Two-Pointer in Linked List
+# Two-Pointer in Linked List
 
 To detect a cycle we need to do use pointers one going faster than other and if they catch up we have a cycle:
 
@@ -11,3 +11,24 @@ What is a proper speed of two pointers?:
     - Slow pointer -> one step at a time
     - Fast pointer -> two step at a time
     - If the length of the cycle is $M$, after $M$ iterations the fast pointer will move one more cycle and catch up with slow pointer.
+
+- If you want to return the node at which cycle starts have to use Floyd's Algorithm:
+    - Move one pointer back to head and traverse until they meet.
+
+- If you want to find the node at which two linked lists meet:
+    - Use dict to store Nodes of the first linked list
+    - traverse through the second linked list and if the value is in dict return the node
+
+## Tips
+
+1. Always examine if the node is null before you call the `next`
+2. Carefully define the end conditions of your loop to avoid endless loop and null-point error.
+
+------
+
+# Classic Problems
+
+## Reverse Linked List
+
+Iterate the nodes in original order and change the direction of next towards the previous node. For example if we have `23 -> 6 -> 15 -> null`:
+ We move the next node of the `6` as `23` then we move next node of `15` as `6` and next node of `23` as `null` this way we get `null <- 23 <- 6 <- 15`.
