@@ -32,3 +32,9 @@ What is a proper speed of two pointers?:
 
 Iterate the nodes in original order and change the direction of next towards the previous node. For example if we have `23 -> 6 -> 15 -> null`:
  We move the next node of the `6` as `23` then we move next node of `15` as `6` and next node of `23` as `null` this way we get `null <- 23 <- 6 <- 15`.
+
+## Sort by putting odd nodes first then put even nodes next
+
+- This can be done first putting the odd nodes in a linked list and the even nodes in another.
+- Then link the evenList to the of the oddList
+    - We need to track head and tail of each linked list
