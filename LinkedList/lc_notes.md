@@ -38,3 +38,23 @@ Iterate the nodes in original order and change the direction of next towards the
 - This can be done first putting the odd nodes in a linked list and the even nodes in another.
 - Then link the evenList to the of the oddList
     - We need to track head and tail of each linked list
+
+-----
+
+# Doubly Linked List
+
+Doubly linked list in addition to the `next` has one more reference field known as `prev`. This field allows to reference previous node.
+
+Just like in a singly linked list:
+
+1. We can't acces a random position in O(1).
+2. We have to traverse from the head to get ith node we want.
+3. Worst case time complexity will be O(n).
+
+### Adding a node
+
+The process of inserting a node `current` can be divided into two steps:
+
+1. Link `current` with `prev`, where `next` is the original next node of `prev`.
+2. Re-link the `prev` and `next` with `current`.
+
