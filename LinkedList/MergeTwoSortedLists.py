@@ -9,20 +9,21 @@
 class Solution:
     def mergeTwoLists(
         self, l1: ListNode, l2: ListNode) -> ListNode:
-        first = l1
-        second = l2
-        merged = ListNode()
-        while first.next or second.next:
-            if first is None:
-                merged.next = second
-                second = second.next
-            elif second is None:
-                merged.next = first
-                first = first.next
-            elif first.val <= second.val:
-                merged.next = first
-                first = first.next
-            elif first.val > second.val:
-                merged.next = second
-                second = second.next
-        return merged
+        tmp = ListNode()
+        head = tmp
+        
+        while l1 and l2:
+            if l1.val > l2.val:
+                tmp.next = l2
+                l2 = l2.next
+            else:
+                tmp.next = l1
+                l1 = l1.next
+            tmp = tmp.next
+            
+        if l1:
+            tmp.next = l1
+        else:
+            tmp.next = l2
+            
+        return head.next
