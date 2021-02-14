@@ -7,23 +7,29 @@
 #         self.next = next
 
 class Solution:
-    def mergeTwoLists(
-        self, l1: ListNode, l2: ListNode) -> ListNode:
-        tmp = ListNode()
-        head = tmp
+    def rotateRight(self, head: ListNode, k: int) -> ListNode:
+        if not head: return head
+        tail = head
         
-        while l1 and l2:
-            if l1.val > l2.val:
-                tmp.next = l2
-                l2 = l2.next
-            else:
-                tmp.next = l1
-                l1 = l1.next
-            tmp = tmp.next
+        # Calculate length but start with 1 as the loop'll
+        # stop just before the last value in the linked list
+        length = 1
+        while tail.next:
+            length += 1
+            tail = tail.next
             
-        if l1:
-            tmp.next = l1
-        else:
-            tmp.next = l2
+        # Check if the k exceeds the number of nodes no
+        # no need to run extra cycle
+        k %= length
+        if k == 0: return head
+        
+        # New head will start from length - k
+        start_pointer = length - k
+        tail.next = head
+        while start_pointer > 0:
+            tail = tail.next
+            start_pointer -= 1
             
-        return head.next
+        new_head = tail.next
+        tail.next = None
+        return new_head
