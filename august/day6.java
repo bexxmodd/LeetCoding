@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
         
@@ -5,7 +7,6 @@ class Solution {
         int[] duplicates = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             if (duplicates[nums[i] - 1] == 0) {
-                System.out.println(duplicates[nums[i] - 1]);
                 duplicates[nums[i] - 1] = 1;
             } else {
                 listOfNumbers.add(nums[i]);
