@@ -14,15 +14,16 @@ class Solution:
     def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
         if not root:
             return False
-        stack = [(root, root.val)]
+        stack = deque()
+        stack.appendleft((root, root.val))
         while stack:
-            curr, value = stack.pop()
+            curr, value = stack.popleft()
             if self.is_leaf(curr) and value == targetSum:
                 return True
-            if curr.right:
-                stack.append((curr.right, value+curr.right.val))
             if curr.left:
-                stack.append((curr.left, value+curr.left.val))
+                stack.appendleft((curr.left, value+curr.left.val))
+            if curr.right:
+                stack.appendleft((curr.right, value+curr.right.val))
         return False
 
     def is_leaf(self, p: TreeNode) -> bool:
