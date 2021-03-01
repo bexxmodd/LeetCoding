@@ -23,8 +23,6 @@ class Solution:
             self.preorder_traversal(p.left, values)
             self.preorder_traversal(p.right, values)
 
-# https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/929/
-
     def inorderTraversal(self, root: TreeNode) -> List[int]:
         values = []
         self.inorder_traversal(root, values)
@@ -36,15 +34,12 @@ class Solution:
             self.inorder_traversal(p.left, values)
             values.append(p.val)
             self.inorder_traversal(p.right, values)
-        
-
-# https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/930/
 
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         values = []
         self.postorder_traversal(root, values)
         return values
-        
+
     def postorder_traversal(self, p: TreeNode, values: List[int]):
         if p:
             self.postorder_traversal(p.left, values)
