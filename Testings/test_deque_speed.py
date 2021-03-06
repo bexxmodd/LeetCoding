@@ -82,14 +82,14 @@ def list_comprehension(rounds: list) -> dict:
     return results
 
 if __name__ == '__main__':
-    print(f'deque append >> \t{deque_speed_append([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
-    print(f'deque appendleft >> \t{deque_speed_appendleft([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
-    print(f'list append >> \t\t{deque_speed_append([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'deque append\t\t{deque_speed_append([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'deque appendleft\t{deque_speed_appendleft([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'list append\t\t{deque_speed_append([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
     print('--------------------------------------')
-    print(f'list comprehension >> \t{list_comprehension([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'list comprehension\t{list_comprehension([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
     print('--------------------------------------')
-    print(f'deque pop >> \t\t{deque_speed_pop([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
-    print(f'deque popleft >> \t{deque_speed_popleft([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
-    print(f'list pop >> \t\t{list_speed_pop([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'deque pop\t\t{deque_speed_pop([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'deque popleft\t{deque_speed_popleft([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
+    print(f'list pop\t\t{list_speed_pop([100, 1000, 10000, 100000, 1000000, 10000000, 100000000])}')
 
 
