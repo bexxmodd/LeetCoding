@@ -10,3 +10,20 @@ def commonChars(self, A: List[str]) -> List[str]:
             cntr &= collections.Counter(a) # & will keep common chars
         return list(cntr.elements())
 ```
+
+- We can sort `Counter` by first using it's method `most_common()` and then running `.sort()` method after.
+
+Example:
+```python
+count = Counter(nums).most_common()
+count.sort(key = lambda x: x[0])
+```
+
+- To convert `Counter` results, which are tuples, into a list of values use following:
+
+```python
+res = []
+for i in count:
+    val, n = i
+    res.extend([val] * i)
+```
