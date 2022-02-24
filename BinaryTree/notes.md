@@ -30,7 +30,7 @@ def top_down(root, params):
     5. return the answer if needed                      // answer <-- left_ans, right_ans
 ```
 
-When you meet a tree problem, ask yourself two questions: Can you determine some parameters to help the node know its answer? Can you use these  arameters and the value of the node itself to determine what should be the parameters passed to its children? If the answers are both yes, try to solve this problem using a "top-down" recursive solution.
+When you meet a tree problem, ask yourself two questions: Can you determine some parameters to help the node know its answer? Can you use these parameters and the value of the node itself to determine what should be the parameters passed to its children? If the answers are both yes, try to solve this problem using a "top-down" recursive solution.
 
 
 ### Check if Tree is Symmetric

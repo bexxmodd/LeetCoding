@@ -127,7 +127,7 @@ def __qsort(arr, start, end):
 
 
 def partition(arr, start, end) -> int:
-    pivot = arr[random.randint(0, end)]
+    pivot = arr[end]
     index = start
     for i in range(start, end):
         if arr[i] <= pivot:
@@ -139,13 +139,16 @@ def partition(arr, start, end) -> int:
 
 if __name__ == '__main__':
     a = [2, 4, 1, 6, 8, 5, 3, 7]
-    bubble_sort(a)
+    # bubble_sort(a)
     b = [8, 11, 13, 16, 9, 6, 23, 7]
-    merge_sort(b)
+    # merge_sort(b)
     c = [2, 44, 41, 63, 88, 52, 3, 37]
-    qsort(c)
     d = [7, 2, 4, 1, 5, 3]
-    insertion_sort(d)
+    qsort(a)
+    qsort(b)
+    qsort(c)
+    qsort(d)
+    # insertion_sort(d)
     print('Bubble Sort', a)
     print('Merge Sort', b)
     print('Quick Sort', c)
